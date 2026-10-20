@@ -1,5 +1,5 @@
 # Website block for the edge Caddy (edge-caddy).
-# Lives on the VPS at /root/apps/edge-caddy/conf/sites/myrgp.caddy (copied there by scripts/deploy.sh).
+# Lives on the VPS at /root/apps/edge-caddy/sites/myrgp.caddy (copied there by scripts/deploy.sh).
 # Caddy gets and renews the HTTPS certificate for myrgp.in automatically.
 
 myrgp.in {

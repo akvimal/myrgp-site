@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 CADDY_CONTAINER="${CADDY_CONTAINER:-edge-caddy}"
-CADDY_SITES="${CADDY_SITES:-/root/apps/edge-caddy/conf/sites}"
+CADDY_SITES="${CADDY_SITES:-/root/apps/edge-caddy/sites}"
 
 git fetch --quiet origin
 git reset --hard origin/main
