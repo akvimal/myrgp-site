@@ -19,7 +19,7 @@ s=620/logo.width; lg=logo.resize((620,round(logo.height*s)),Image.LANCZOS); im.p
 d.text((70,250),"Same medicine.",font=ImageFont.truetype(B,64),fill=(11,106,168))
 d.text((70,325),"Lower price.",font=ImageFont.truetype(B,64),fill=(20,121,42))
 d.text((70,430),"Mogappair West, Chennai",font=ImageFont.truetype(R,30),fill=(75,90,102))
-d.text((70,475),"Call / WhatsApp  72990 72721",font=ImageFont.truetype(B,30),fill=(21,34,48))
+d.text((70,475),"Call / WhatsApp  72990 72725",font=ImageFont.truetype(B,30),fill=(21,34,48))
 d.text((830,150),"Up to",font=ImageFont.truetype(B,36),fill=(255,255,255))
 d.text((826,195),"80%",font=ImageFont.truetype(B,96),fill=(255,255,255))
 d.text((830,315),"off on generic",font=ImageFont.truetype(B,36),fill=(255,255,255))
