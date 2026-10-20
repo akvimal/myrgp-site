@@ -4,7 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-CADDY_CONTAINER="${CADDY_CONTAINER:-edge-caddy}"
+CADDY_CONTAINER="${CADDY_CONTAINER:-$(docker ps -q --filter label=com.docker.compose.project=caddy --filter label=com.docker.compose.service=caddy | head -n1)}"
 CADDY_SITES="${CADDY_SITES:-/root/apps/edge-caddy/sites}"
 
 git fetch --quiet origin
