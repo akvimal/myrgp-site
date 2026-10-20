@@ -463,11 +463,13 @@ footer .flogo img{height:56px;width:auto;display:block;max-width:100%}
   .hero .offer span{font-size:.9rem}
   .myths,.safe,.visit,.estimator{grid-template-columns:1fr}
   .fab{padding:0 16px;min-height:46px;font-size:.9rem}
+  .rbadge{flex-wrap:nowrap;gap:8px;padding:8px 12px;font-size:.84rem;white-space:nowrap}
   footer .wrap{padding-bottom:88px}
 }
 @media (max-width:380px){
   .hero .offer{flex-direction:column;align-items:flex-start;gap:2px}
   .hero .offer b{min-width:0}
+  .rbadge{flex-wrap:wrap;justify-content:center;white-space:normal;gap:0 8px;line-height:1.4;border-radius:22px}
 }
 .fab{transition:opacity .2s ease,transform .2s ease}
 .fab.away{opacity:0;transform:translateY(12px);pointer-events:none}
