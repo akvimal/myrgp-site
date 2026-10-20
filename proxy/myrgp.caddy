@@ -1,0 +1,22 @@
+# Website block for the edge Caddy (edge-caddy).
+# Lives on the VPS at /root/apps/edge-caddy/conf/sites/myrgp.caddy (copied there by scripts/deploy.sh).
+# Caddy gets and renews the HTTPS certificate for myrgp.in automatically.
+
+myrgp.in {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+	}
+
+	reverse_proxy myrgp-web:80
+}
+
+www.myrgp.in {
+	redir https://myrgp.in{uri} permanent
+}

@@ -1,0 +1,17 @@
+# Run on the VPS from the repo folder:  docker compose up -d --build
+services:
+  myrgp-web:
+    build: .
+    image: myrgp-web:latest
+    container_name: myrgp-web
+    restart: unless-stopped
+    # No ports published: only the edge Caddy (edge-caddy) reaches it over the "edge" network.
+    networks:
+      - edge
+
+networks:
+  edge:
+    external: true
+    # Shared network between edge-caddy and the apps behind it.
+    # Create once on the VPS:  docker network create edge
+    name: edge
