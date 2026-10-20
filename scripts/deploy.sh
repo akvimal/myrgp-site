@@ -17,7 +17,7 @@ docker exec myrgp-web wget -q --spider http://127.0.0.1/ && echo "myrgp-web is s
 if ! cmp -s proxy/myrgp.caddy "$CADDY_SITES/myrgp.caddy"; then
   [ -f "$CADDY_SITES/myrgp.caddy" ] && cp "$CADDY_SITES/myrgp.caddy" /tmp/myrgp.caddy.prev
   cp proxy/myrgp.caddy "$CADDY_SITES/myrgp.caddy"
-  if docker exec "$CADDY_CONTAINER" caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile >/dev/null 2>&1; then
+  if docker exec "$CADDY_CONTAINER" caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile 2>&1 | tail -n 20 >&2; [ "${PIPESTATUS[0]}" -eq 0 ]; then
     docker exec "$CADDY_CONTAINER" caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile
     echo "Caddy reloaded with new myrgp.caddy"
   else
