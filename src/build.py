@@ -12,7 +12,7 @@ LOGO,LOGOD=b64(os.path.join(PUB,'logo.png')),b64(os.path.join(PUB,'logo-dark.png
 pat=re.compile(r'\[\[(\w+)\|(.*?)\]\]',re.S)
 keys={m.group(1) for m in pat.finditer(t)}
 assert not (keys-set(TA)), keys-set(TA)
-wa=lambda msg:"https://wa.me/917299072725?text="+urllib.parse.quote(msg)
+wa=lambda msg:"https://wa.me/917299072721?text="+urllib.parse.quote(msg)
 cfg={'en':dict(LANG='en',LANGNAME='English',OGLOCALE='en_IN',OGLOCALE_ALT='ta_IN',PAGE_URL='https://myrgp.in/',OTHER_HREF='ta.html',OTHER_LANG='ta',OTHER_NAME='தமிழ்',
       WA_REFILL=wa("Hello Ramesh Generic Pharmacy, I would like to refill my medicines. I am sending a photo of my prescription."),
       WA_COMPARE=wa("Hello Ramesh Generic Pharmacy, please check your price for my medicines. I am sending a photo of my bill / prescription.")),
